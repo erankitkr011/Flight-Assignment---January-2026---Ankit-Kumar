@@ -110,37 +110,46 @@ node seed/seedFlights.js
 npm start
 ```
 
-Server will start at:
-http://localhost:4000
-🔗 API Endpoints
-Flights
+## Server will start at:
+http://localhost:4000 or npm run dev
+
+## 🔗 API Endpoints
+
+### Flights
 GET /api/v1/flight → Get 10 flights
 GET /api/v1/flight/search?departureCity=&arrivalCity=
-Booking
+
+### Booking
 POST /api/v1/booking → Book a flight
 GET /api/v1/booking/history → Get booking history
-Wallet
+
+### Wallet
 GET /api/v1/wallet → Get wallet balance
-🧠 Architecture & Design
+
+## 🧠 Architecture & Design
 Follows MVC architecture
 Business logic separated using services
 Surge pricing implemented using time-based database queries
 Wallet & booking logic handled transactionally
 Code written with production-ready practices
-🌟 Optional Enhancements Implemented
+
+## 🌟 Optional Enhancements Implemented
 JWT authentication
 Modular service-based structure
 Centralized error handling
 Reusable utility functions
-🔮 Future Improvements
+
+## 🔮 Future Improvements
 Frontend integration (React)
 Sorting & filtering flights
 Surge pricing countdown timer
 Dockerized deployment
-👤 Author
-Ankit Kumar
-Full Stack Developer
-Specialized in Node.js, MongoDB, and system design
+
+## 👤 Author
+## Ankit Kumar
+## Full Stack Developer
+## Specialized in Node.js, MongoDB, and system design
+
 ✅ Assignment Status
 ✔ All mandatory requirements implemented
 ✔ Fully database-driven
