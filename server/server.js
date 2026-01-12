@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
+const path = require("path");
 require('dotenv').config();
 // const fileUpload = require('express-fileupload');
 
@@ -41,6 +42,14 @@ app.get('/', (req, res)=> {
         success: true,
         message: "Your server is up and running",
     });
+});
+
+// Serve frontend
+app.use(express.static(path.join(__dirname, "public")));
+
+// React SPA fallback (SAFE for Node 22+)
+app.get(/^\/(?!api).*/, (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 app.use(errorHandler);
