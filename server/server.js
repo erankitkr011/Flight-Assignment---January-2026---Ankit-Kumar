@@ -37,12 +37,12 @@ app.use('/api/v1/booking', bookingRoutes);
 app.use('/api/v1/flight', flightRoutes);
 app.use('/api/v1/wallet', walletRouter);
 
-app.get('/', (req, res)=> {
-    return res.status(200).json({
-        success: true,
-        message: "Your server is up and running",
-    });
-});
+// app.get('/', (req, res)=> {
+//     return res.status(200).json({
+//         success: true,
+//         message: "Your server is up and running",
+//     });
+// });
 
 // Serve frontend
 app.use(express.static(path.join(__dirname, "public")));
