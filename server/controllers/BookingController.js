@@ -42,7 +42,7 @@ exports.bookFlight = async (req, res) => {
     const finalPrice = await applySurgePricing(flight, userId);
 
     // Get wallet
-    const wallet = await Wallet.findOne({ userId });
+    const wallet = await Wallet.findOne({ userId: req.user.id });
     if (!wallet || wallet.balance < finalPrice) {
       return res.status(400).json({
         success: false,
@@ -80,6 +80,7 @@ exports.bookFlight = async (req, res) => {
       message: "Flight booked successfully",
       data: booking,
       pnr: booking.pnr,
+      updatedBalance: wallet.balance,
     });
   } catch (error) {
     res.status(500).json({
